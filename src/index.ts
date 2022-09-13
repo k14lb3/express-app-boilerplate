@@ -1,10 +1,10 @@
-import { config } from "dotenv";
-import express from "express";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import morgan from "morgan";
+import { config } from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
 
-import routes from "./routes";
+import routes from './routes';
 
 config();
 
@@ -18,8 +18,8 @@ const main = async () => {
     app.use(cookieParser());
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
-    app.use(express.static("public"));
-    app.use(morgan("combined"));
+    app.use(express.static('public'));
+    app.use(morgan('combined'));
 
     app.use(routes);
 

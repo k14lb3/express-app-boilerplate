@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --poll --respawn --transpile-only --exit-child --clear --require tsconfig-paths/register ./src/index.ts",
     "build": "rimraf ./dist && tsc --project tsconfig.json && tsc-alias --project tsconfig.json",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "format": "prettier --config .prettierrc --write ."
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
@@ -21,6 +22,7 @@
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^18.7.16",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
