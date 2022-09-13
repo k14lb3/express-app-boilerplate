@@ -4,8 +4,8 @@
   "main": "src/index.ts",
   "private": false,
   "scripts": {
-    "dev": "ts-node-dev --poll --respawn --transpile-only --exit-child --clear ./src/index.ts",
-    "build": "rimraf ./dist && tsc --project tsconfig.json",
+    "dev": "ts-node-dev --poll --respawn --transpile-only --exit-child --clear --require tsconfig-paths/register ./src/index.ts",
+    "build": "rimraf ./dist && tsc --project tsconfig.json && tsc-alias --project tsconfig.json",
     "start": "node ./dist/index.js"
   },
   "dependencies": {
@@ -24,6 +24,8 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.3"
   },
   "author": "Karl Ivan Alberto",
