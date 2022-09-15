@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 
 import routes from './routes';
+import errorHandler from '@/middlewares/error-handler';
 
 config();
 
@@ -23,6 +24,7 @@ const main = async () => {
     app.use(morgan('combined'));
 
     app.use(routes);
+    app.use(errorHandler);
 
     app.listen(port, () => {
       console.clear();
